@@ -1,6 +1,10 @@
 module.exports = {
   darkMode: 'class',
-  content: ['./app/**/*.{js,jsx}', './components/**/*.{js,jsx}', './pages/**/*.{js,jsx}'],
+ content: [
+  './pages/**/*.{js,ts,jsx,tsx}',
+  './components/**/*.{js,ts,jsx,tsx}',
+  './app/**/*.{js,ts,jsx,tsx}',
+],
   theme: {
     extend: {
       animation: {
