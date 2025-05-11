@@ -19,8 +19,13 @@ else
 fi
 
 # Commit and push the updated README
+git add .
+git commit -m "Save local changes before rebase"
+git pull origin main --rebase
 git add README.md
 git commit -m "Update README with latest deployment URL"
 git push
+git push origin main
+
 
 echo "README updated with: $URL"
