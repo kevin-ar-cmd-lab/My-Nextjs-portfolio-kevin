@@ -5,13 +5,14 @@ import { useRouter } from 'next/router';
 import Loader from '../components/Loader';
 import Layout from '../components/Layout';
 import { ThemeProvider, useTheme } from '../context/ThemeContext';
-import NewsletterForm from '../components/NewsletterForm'; //
+import NewsletterForm from '../components/NewsletterForm';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 function AppWrapper({ Component, pageProps }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const { darkMode } = useTheme();
-  
+
   useEffect(() => {
     const handleStart = () => setLoading(true);
     const handleComplete = () => setLoading(false);
@@ -28,7 +29,8 @@ function AppWrapper({ Component, pageProps }) {
   }, [router]);
 
   return (
-     <div className={darkMode ? 'dark' : ''}>
+    <div className={darkMode ? 'dark' : ''}>
+      <SpeedInsights />
       {loading && <Loader />}
       <Layout>
         <Component {...pageProps} />
