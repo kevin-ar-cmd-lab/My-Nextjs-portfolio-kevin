@@ -17,9 +17,9 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
           <img src="Kevin.jpg" alt="Logo" className="h-8 w-8 mr-2" />
-            <Link href="/" className="text-2xl font-bold text-blue-400 hover:scale-105 transition-transform">
-              Kevin's Space
-            </Link>
+         <span className="animate-color-cycle animate-pulse">
+  Kevin's WorkSpace
+</span> 
           </div>
 
           {/* Desktop Menu */}

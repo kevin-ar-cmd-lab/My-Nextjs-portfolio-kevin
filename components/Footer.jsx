@@ -5,9 +5,9 @@ export default function Footer() {
     <footer className="bg-gray-800 text-white py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
        <p className="text-4xl font-bold">
-  <span className="text-gradient-animate animate-pulse">
-    Kevin's Digital Workspace
-  </span>
+      <span className="animate-color-cycle animate-pulse">
+  Kevin's Digital WorkSpace
+</span>
 </p>
          <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between">
           <div className="mb-6 md:mb-0">
