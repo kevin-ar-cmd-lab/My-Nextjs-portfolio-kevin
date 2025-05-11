@@ -1,0 +1,34 @@
+{
+  "name": "kevins-digital-space",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "node server.js",
+    "server": "node server.js"
+  },
+  "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@heroicons/react": "^2.2.0",
+    "cors": "^2.8.5",
+    "emailjs-com": "^2.5.0",
+    "express": "^5.1.0",
+    "framer-motion": "^7.10.3",
+    "mongoose": "^8.14.1",
+    "next": "^15.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.5.2",
+    "react-icons": "^5.5.0",
+    "tailwindcss": "^2.2.19"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.3",
+    "@types/react": "19.1.2",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "typescript": "5.8.3"
+  }
+}

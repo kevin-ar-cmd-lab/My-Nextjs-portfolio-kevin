@@ -1,0 +1,46 @@
+import 
+import { useRouter } from 'next/router';
+import Navbar from './Navbar';
+import Footer from './Footer';
+import SEOHead from './SEOHead';
+import SEOData from './SEOData';
+
+export default function Layout({ children }) {
+  const router = useRouter();
+  const currentRoute = router.pathname;
+  const normalizedRoute = currentRoute.toLowerCase();
+
+  const defaultSEO = {
+    title: "Default Title",
+    description: "Default Description",
+    keywords: "default, keywords",
+    image: "/default-image.jpg",
+    url: "https://yourdomain.com",
+  };
+
+  const seoData = SEOData[normalizedRoute] || defaultSEO;
+
+  if (process.env.NODE_ENV === 'development' && !SEOData[normalizedRoute]) {
+    console.warn(`Warning: No SEO data found for route: "${normalizedRoute}"`);
+  }
+
+  const routeSchemaMap = {
+    "/": "org",
+    "/about": "org",
+    "/contact": "org",
+    "/blog": "blog",
+    "/projects": "webpage",
+    "/testimonials": "webpage",
+  };
+
+  const schemaType = routeSchemaMap[normalizedRoute] || "webpage";
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <SEOHead seo={seoData} schemaType={schemaType} />
+      <Navbar />
+      <main className="flex-grow">{children}</main>
+      <Footer />
+    </div>
+  );
+}
