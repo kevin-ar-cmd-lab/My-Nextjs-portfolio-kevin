@@ -74,3 +74,4 @@ sentry-wizard-installation-error-*.log
 
 # Build artifacts
 *.tgz
+.vercel

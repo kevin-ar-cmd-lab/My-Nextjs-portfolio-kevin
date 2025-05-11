@@ -12,6 +12,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@heroicons/react": "^2.2.0",
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "@prisma/client": "^6.7.0",
     "@vercel/speed-insights": "^1.2.0",
     "cors": "^2.8.5",
     "emailjs-com": "^2.5.0",
@@ -19,6 +21,7 @@
     "framer-motion": "^7.10.3",
     "mongoose": "^8.14.1",
     "next": "^15.3.1",
+    "node-fetch": "^3.3.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.5.2",
@@ -30,6 +33,7 @@
     "@types/react": "19.1.2",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
+    "prisma": "^6.7.0",
     "typescript": "5.8.3"
   }
 }

@@ -20,12 +20,30 @@ export default function NewsletterForm() {
     setError('');
     setLoading(true);
 
-    // Simulate async action
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || 'Subscription failed.');
+        toast.error(data.error || 'Subscription failed.');
+      } else {
+        toast.success(data.message || 'Subscribed successfully!');
+        setEmail('');
+      }
+    } catch (err) {
+      console.error('Subscription error:', err);
+      toast.error('Something went wrong. Please try again later.');
+    } finally {
       setLoading(false);
-      setEmail('');
-      toast.success('Subscribed successfully!');
-    }, 1500);
+    }
   };
 
   return (
