@@ -10,4 +10,4 @@ A portfolio website built with Next.js, Tailwind CSS, and Framer Motion.
 4. Open `http://localhost:3000` in your browse
 
 ## Live Site  
-[https://kevinsdigitalspace-g47v8zonx-kevin-ar-cmd-labs-projects.vercel.app)
+[https://kevinsdigitalspace-61qxyv1v0-kevin-ar-cmd-labs-projects.vercel.app)
