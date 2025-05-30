@@ -1,4 +1,4 @@
-w/** @type {import('next').NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   // Optional: Enable scroll animations or WebGL support if used in Motion
