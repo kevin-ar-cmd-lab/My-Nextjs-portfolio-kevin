@@ -12,3 +12,7 @@ html {
   background-color: #1a202c; /* Tailwind's gray-900 */
   color: #f7fafc;            /* Tailwind's gray-100 */
 }
+
+/* animate-color-cycle animate-pulse class animation */
+/*@animate-color-cycle animate-pulse*/
+  

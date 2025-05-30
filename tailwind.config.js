@@ -13,7 +13,7 @@ module.exports = {
         'pulse-slow': 'pulse 3s ease-in-out infinite',
         'fade-in': 'fadeIn 1s ease-out forwards',
         'scale-in': 'scaleIn 0.5s ease-out forwards',
-        'color-cycle': 'colorCycle 6s ease-in-out infinite',
+        'color-cycle': 'colorCycle 3s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -33,5 +33,9 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+ plugins: [
+  require('@tailwindcss/forms'),
+  require('@tailwindcss/typography'),
+  require('@tailwindcss/aspect-ratio'),
+],
 };
