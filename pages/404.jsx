@@ -1,15 +1,17 @@
 import Head from 'next/head';
 import { useEffect } from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Custom404() {
+  const router = useRouter();
+
   useEffect(() => {
-    // Redirect after 3 seconds or directly based on your requirement
-    setTimeout(() => {
-      const redirectTo = location.pathname.replace(/^\/Kevins-Digital-WorkSpace/, '');
-      location.replace(`/Kevins-Digital-WorkSpace/index.html?redirect=${encodeURIComponent(redirectTo)}`);
-    }, 3000); // Delay of 3 seconds for user to see the message before redirect
-  }, []);
+    const timer = setTimeout(() => {
+      router.replace('/');
+    }, 3000);
+
+    return () => clearTimeout(timer); // Cleanup if unmounted early
+  }, [router]);
 
   return (
     <>
@@ -22,11 +24,12 @@ export default function Custom404() {
         <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
           Oops! The page you're looking for does not exist.
         </p>
-        <Link href="/">
-          <span className="inline-block px-6 py-3 bg-blue-600 text-white rounded-md cursor-pointer hover:bg-blue-700 transition">
-            Go Back Home
-          </span>
-        </Link>
+        <span
+          onClick={() => router.push('/')}
+          className="inline-block px-6 py-3 bg-blue-600 text-white rounded-md cursor-pointer hover:bg-blue-700 transition"
+        >
+          Go Back Home
+        </span>
         <p className="mt-4 text-gray-500">Redirecting you in 3 seconds...</p>
       </main>
     </>

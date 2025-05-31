@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import SEOHead from './SEOHead';
@@ -6,7 +7,15 @@ import SEOData from './SEOData';
 import FitToScreenLayout from './FitToScreenLayout';
 
 export default function Layout({ children }) {
+  const [hasMounted, setHasMounted] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) return null; // Prevent hydration mismatch
+
   const currentRoute = router.pathname;
   const normalizedRoute = currentRoute.toLowerCase();
 
@@ -42,7 +51,7 @@ export default function Layout({ children }) {
         header={<Navbar />}
         footer={<Footer />}
       >
-        <main className="flex-grow pt-12 sm:pt-16 md:pt-20 lg:pt-24">
+        <main className="flex-grow">
           {children}
         </main>
       </FitToScreenLayout>

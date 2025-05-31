@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
   const apiKey = process.env.BREVO_API_KEY;
   if (!apiKey) {
-    console.error('BREVO_API_KEY is not defined in environment');
+    console.error('Missing BREVO_API_KEY');
     return res.status(500).json({ error: 'Server configuration error.' });
   }
 
@@ -25,35 +25,27 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         email,
-        listIds: [2],  // Ensure this list ID exists in your Brevo account
+        listIds: [2], // Replace with your valid list ID
         updateEnabled: true,
       }),
     });
 
-    const text = await response.text();
-
-    let data = {};
-    if (text) {
-      try {
-        data = JSON.parse(text);
-      } catch (err) {
-        console.error('Non-JSON response from Brevo:', {
-          status: response.status,
-          headers: Object.fromEntries(response.headers.entries()),
-          body: text
-        });
-        return res.status(500).json({ error: 'Unexpected response from Brevo.' });
-      }
+    // Handle known status codes from Brevo
+    if (response.status === 201) {
+      return res.status(200).json({ message: 'You have been subscribed successfully.' });
     }
 
-    if (response.ok || response.status === 204) {
-      return res.status(200).json({ message: 'You are already subscribed or successfully added.' });
-    } else {
-      return res.status(response.status).json({ error: data.message || 'Subscription failed.' });
+    if (response.status === 204) {
+      return res.status(200).json({ message: 'You are already subscribed.' });
     }
 
-  } catch (error) {
-    console.error('Unexpected internal error:', error);
+    const errorBody = await response.json();
+    return res.status(response.status).json({
+      error: errorBody.message || 'Unknown error from Brevo',
+    });
+
+  } catch (err) {
+    console.error('Brevo subscription error:', err);
     return res.status(500).json({ error: 'Internal server error.' });
   }
 }

@@ -1,5 +1,3 @@
-import NewsletterForm from './NewsletterForm';
-
 export default function Footer() {
   return (
     <footer className="bg-white text-black dark:bg-gray-900 dark:text-gray-100 py-12">
@@ -14,66 +12,35 @@ export default function Footer() {
           <div className="mb-6 md:mb-0">
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li>
-                <a href="/" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="/skills" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-                  Skills
-                </a>
-              </li>
-              <li>
-                <a href="/projects" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-                  Contact
-                </a>
-              </li>
+              <li><a href="/" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">Home</a></li>
+              <li><a href="/about" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">About</a></li>
+              <li><a href="/skills" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">Skills</a></li>
+              <li><a href="/projects" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">Projects</a></li>
+              <li><a href="/contact" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">Contact</a></li>
             </ul>
           </div>
 
           <div className="mb-6 md:mb-0">
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
-              <li>
-                <a href="/web-development" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-                  Web Development
-                </a>
-              </li>
-              <li>
-                <a href="/mobile-development" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-                  Mobile Development
-                </a>
-              </li>
-              <li>
-                <a href="/ui-ux-design" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-                  UI/UX Design
-                </a>
-              </li>
-              <li>
-                <a href="/consulting" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-                  Consulting
-                </a>
-              </li>
+              <li><a href="/web-development" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">Web Development</a></li>
+              <li><a href="/mobile-development" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">Mobile Development</a></li>
+              <li><a href="/ui-ux-design" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">UI/UX Design</a></li>
+              <li><a href="/consulting" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">Consulting</a></li>
             </ul>
           </div>
 
           <div className="mb-6 md:mb-0">
-            <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
+            <h4 className="text-lg font-semibold mb-4">Stay Updated</h4>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Subscribe to my newsletter for updates
+              Get updates directly to your inbox
             </p>
-            <NewsletterForm />
+            <a
+              href="/Newsletter"
+              className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300"
+            >
+              Subscribe
+            </a>
           </div>
         </div>
 

@@ -11,6 +11,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 function AppWrapper({ Component, pageProps }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
   const { darkMode } = useTheme();
 
   useEffect(() => {
