@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="https://your-hosted-image-url.com/kevin-banner.png" alt="Kevin’s Digital Workspace Banner">
+</p>
+
 # Personal Portfolio – Kevin Juma
 
 A modern, responsive personal portfolio website built with **Next.js (Page Router)**.  
