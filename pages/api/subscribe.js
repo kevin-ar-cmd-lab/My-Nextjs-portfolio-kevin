@@ -25,7 +25,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         email,
-        listIds: [2], // Replace with your valid list ID
+        listIds: [5], // Replace with your valid list ID
         updateEnabled: true,
       }),
     });
