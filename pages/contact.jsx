@@ -91,7 +91,7 @@ export default function ContactPage() {
                 icon={faBlog}
                 color="text-pink-600"
                 description="Read my latest posts and insights."
-                link="https://kevin-juma.blogspot.com/?m=1"
+                link="https://kevins-web-developement-corner.blogspot.com/?m=1"
                 linkText="Visit Blog"
               />
             </div>
